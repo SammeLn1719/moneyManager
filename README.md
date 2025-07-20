@@ -2,6 +2,8 @@
 
 Это приложение для управления личными финансами, созданное с помощью [Expo](https://expo.dev) и [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## APK https://expo.dev/accounts/sammeln/projects/moneyManager/builds/fb9588de-7159-4772-ac68-57f18a111c70
+
 ## Get started
 
 1. Install dependencies
