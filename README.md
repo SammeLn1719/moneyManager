@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# ZenCash - Приложение для управления финансами 💰
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Это приложение для управления личными финансами, созданное с помощью [Expo](https://expo.dev) и [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
 

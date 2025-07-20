@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenCash - Предварительный просмотр иконок</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4F8CFF 0%, #34D399 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .icon-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #4F8CFF;
+        }
+        
+        .icon-preview {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .icon-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .icon-info h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .icon-info p {
+            color: #718096;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .platform-section {
+            margin-bottom: 40px;
+        }
+        
+        .platform-section h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .size-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .size-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .size-item:hover {
+            border-color: #4F8CFF;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .size-preview {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .size-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .size-info h4 {
+            color: #2d3748;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .size-info p {
+            color: #718096;
+            font-size: 0.8rem;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .color-item {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .color-primary { background: linear-gradient(135deg, #4F8CFF 0%, #34D399 100%); }
+        .color-accent1 { background: #FFB347; }
+        .color-accent2 { background: #F87171; }
+        .color-accent3 { background: #A78BFA; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 ZenCash</h1>
+            <p>Предварительный просмотр иконок приложения</p>
+            <div class="color-palette">
+                <div class="color-item color-primary" title="Основной градиент"></div>
+                <div class="color-item color-accent1" title="Оранжевый акцент"></div>
+                <div class="color-item color-accent2" title="Красный акцент"></div>
+                <div class="color-item color-accent3" title="Фиолетовый акцент"></div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="platform-section">
+                <h2>📱 Основные иконки</h2>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-preview">
+                            <img src="../assets/images/icon.png" alt="Основная иконка">
+                        </div>
+                        <div class="icon-info">
+                            <h3>Основная иконка</h3>
+                            <p>1024x1024px<br>Используется в App Store и Play Store</p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-card">
+                        <div class="icon-preview">
+                            <img src="../assets/images/adaptive-icon.png" alt="Адаптивная иконка">
+                        </div>
+                        <div class="icon-info">
+                            <h3>Адаптивная иконка</h3>
+                            <p>1024x1024px<br>Для Android 8.0+ с адаптивными формами</p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-card">
+                        <div class="icon-preview">
+                            <img src="../assets/images/splash-icon.png" alt="Splash Screen">
+                        </div>
+                        <div class="icon-info">
+                            <h3>Splash Screen</h3>
+                            <p>400x400px<br>Экран загрузки приложения</p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-card">
+                        <div class="icon-preview">
+                            <img src="../assets/images/favicon.png" alt="Favicon">
+                        </div>
+                        <div class="icon-info">
+                            <h3>Favicon</h3>
+                            <p>32x32px<br>Иконка для веб-версии</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="platform-section">
+                <h2>🍎 iOS размеры</h2>
+                <div class="size-grid">
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/icon.png" alt="1024x1024">
+                        </div>
+                        <div class="size-info">
+                            <h4>1024x1024</h4>
+                            <p>App Store</p>
+                        </div>
+                    </div>
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/icon.png" alt="180x180">
+                        </div>
+                        <div class="size-info">
+                            <h4>180x180</h4>
+                            <p>iPhone 6 Plus</p>
+                        </div>
+                    </div>
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/icon.png" alt="120x120">
+                        </div>
+                        <div class="size-info">
+                            <h4>120x120</h4>
+                            <p>iPhone 6</p>
+                        </div>
+                    </div>
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/icon.png" alt="76x76">
+                        </div>
+                        <div class="size-info">
+                            <h4>76x76</h4>
+                            <p>iPad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="platform-section">
+                <h2>🤖 Android размеры</h2>
+                <div class="size-grid">
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/adaptive-icon.png" alt="512x512">
+                        </div>
+                        <div class="size-info">
+                            <h4>512x512</h4>
+                            <p>Play Store</p>
+                        </div>
+                    </div>
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/adaptive-icon.png" alt="192x192">
+                        </div>
+                        <div class="size-info">
+                            <h4>192x192</h4>
+                            <p>xxxhdpi</p>
+                        </div>
+                    </div>
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/adaptive-icon.png" alt="144x144">
+                        </div>
+                        <div class="size-info">
+                            <h4>144x144</h4>
+                            <p>xxhdpi</p>
+                        </div>
+                    </div>
+                    <div class="size-item">
+                        <div class="size-preview">
+                            <img src="../assets/images/adaptive-icon.png" alt="96x96">
+                        </div>
+                        <div class="size-info">
+                            <h4>96x96</h4>
+                            <p>xhdpi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🎨 Иконки созданы для приложения ZenCash</p>
+            <p>💡 Откройте этот файл в браузере для предварительного просмотра</p>
+        </div>
+    </div>
+</body>
+</html> 

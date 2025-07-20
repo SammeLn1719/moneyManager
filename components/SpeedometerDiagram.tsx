@@ -1,3 +1,5 @@
+import { Colors } from '@/constants/Colors';
+import { useColorScheme } from '@/hooks/useColorScheme';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
@@ -14,6 +16,10 @@ interface SpeedometerDiagramProps {
 }
 
 export const SpeedometerDiagram: React.FC<SpeedometerDiagramProps> = ({ categories, size = 260 }) => {
+  const colorScheme = useColorScheme();
+  const theme = colorScheme ?? 'light';
+  const colors = Colors[theme];
+  
   // Ограничение на 20 категорий
   const cats = categories.slice(0, 20);
   const total = cats.reduce((sum, c) => sum + c.amount, 0);
@@ -55,7 +61,7 @@ export const SpeedometerDiagram: React.FC<SpeedometerDiagramProps> = ({ categori
           {/* Background arc */}
           <Path
             d={backgroundArc}
-            stroke="#eee"
+            stroke={theme === 'dark' ? '#374151' : '#eee'}
             strokeWidth={strokeWidth}
             fill="none"
             strokeLinecap="round"
@@ -82,7 +88,13 @@ export const SpeedometerDiagram: React.FC<SpeedometerDiagramProps> = ({ categori
         ]}
         pointerEvents="none"
       >
-        <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#222' }}>{total}</Text>
+        <Text style={{ 
+          fontSize: 32, 
+          fontWeight: 'bold', 
+          color: colors.textPrimary 
+        }}>
+          {total} ₽
+        </Text>
       </View>
     </View>
   );
