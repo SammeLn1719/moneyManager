@@ -24,7 +24,7 @@ export const PaymentManager: React.FC<PaymentManagerProps> = ({ categories, onPa
   const { t, tWithParams } = useLanguage();
   const [updateKey, setUpdateKey] = useState(0);
   
-  // Подписываемся на изменения языка
+  
   useEffect(() => {
     const unsubscribe = subscribeToLanguageChange(() => {
       setUpdateKey(prev => prev + 1);
@@ -79,7 +79,7 @@ export const PaymentManager: React.FC<PaymentManagerProps> = ({ categories, onPa
 
     onPaymentAdd(selectedCategoryIndex, numAmount);
     
-    // Показываем уведомление об успешном добавлении
+  
     Alert.alert(
       t('expenseAdded'),
       tWithParams('expenseAddedMessage', { 
@@ -120,7 +120,7 @@ export const PaymentManager: React.FC<PaymentManagerProps> = ({ categories, onPa
         </Text>
       </TouchableOpacity>
 
-      {/* Модальное окно для добавления платежа */}
+     
       <Modal
         visible={isModalVisible}
         transparent={true}

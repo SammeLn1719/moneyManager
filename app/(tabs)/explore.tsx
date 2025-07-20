@@ -18,7 +18,7 @@ export default function TabTwoScreen() {
   const { t } = useLanguage();
   const [updateKey, setUpdateKey] = useState(0);
   
-  // Подписываемся на изменения языка
+
   useEffect(() => {
     const unsubscribe = subscribeToLanguageChange(() => {
       setUpdateKey(prev => prev + 1);
@@ -63,10 +63,10 @@ export default function TabTwoScreen() {
             flex: 1,
             paddingHorizontal: screenWidth > 400 ? 24 : 16,
             paddingTop: screenHeight > 800 ? 20 : 16,
-            paddingBottom: 100, // Отступ для табов
+            paddingBottom: 100, 
           }}
         >
-          {/* Переключатель языка */}
+
           <LanguageSwitcher style={{ marginBottom: 16 }} />
           
           <Text style={{ 
@@ -81,7 +81,7 @@ export default function TabTwoScreen() {
           
           <CategoryManager value={categories} onChange={setCategories} />
           
-          {/* Кнопка сброса данных */}
+        
           <TouchableOpacity
             onPress={handleReset}
             style={{

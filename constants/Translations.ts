@@ -1,6 +1,6 @@
 export const Translations = {
   ru: {
-    // Общие
+    
     loading: 'Загрузка данных...',
     cancel: 'Отмена',
     save: 'Сохранить',
@@ -10,14 +10,14 @@ export const Translations = {
     reset: 'Сбросить',
     confirm: 'Подтвердить',
     
-    // Главный экран
+    
     expenseManager: 'Менеджер расходов',
     totalExpenses: 'Общая сумма расходов',
     noDataToDisplay: 'Нет данных для отображения',
     createCategoriesInExplore: 'Создайте категории в разделе "Explore"',
     expenseCategories: 'Категории расходов',
     
-    // Экран управления категориями
+    
     categoryManagement: 'Управление категориями',
     clickToEdit: 'Нажмите на категорию для редактирования',
     clickToEditAndDelete: 'Нажмите на категорию для редактирования, кнопка "Удалить" для удаления',
@@ -25,7 +25,7 @@ export const Translations = {
     noCategories: 'Нет категорий',
     resetData: 'Сбросить данные',
     
-    // Модальные окна категорий
+    
     addCategoryTitle: 'Добавить категорию',
     editCategoryTitle: 'Редактировать категорию',
     categoryName: 'Название:',
@@ -34,7 +34,7 @@ export const Translations = {
     amountPlaceholder: 'Сумма (необяз.)',
     color: 'Цвет:',
     
-    // Модальные окна расходов
+    
     addExpense: 'Добавить расход',
     selectCategory: 'Выберите категорию',
     expenseAmount: 'Сумма:',
@@ -42,7 +42,7 @@ export const Translations = {
     description: 'Описание (необязательно):',
     descriptionPlaceholder: 'Краткое описание расхода',
     
-    // Уведомления
+    
     categoryExists: 'Категория уже существует',
     categoryExistsMessage: 'Категория "{name}" уже существует. Пожалуйста, выберите другое название.',
     limitReached: 'Достигнут лимит',
@@ -62,17 +62,17 @@ export const Translations = {
     resetDataTitle: 'Сброс данных',
     resetDataMessage: 'Вы уверены, что хотите сбросить все данные к значениям по умолчанию? Это действие нельзя отменить.',
     
-    // Навигация
+    
     home: 'Главная',
     explore: 'Управление',
     
-    // Настройки языка
+   
     language: 'Язык',
     russian: 'Русский',
     english: 'English',
   },
   en: {
-    // General
+    
     loading: 'Loading data...',
     cancel: 'Cancel',
     save: 'Save',
@@ -82,14 +82,14 @@ export const Translations = {
     reset: 'Reset',
     confirm: 'Confirm',
     
-    // Home screen
+    
     expenseManager: 'Expense Manager',
     totalExpenses: 'Total Expenses',
     noDataToDisplay: 'No data to display',
     createCategoriesInExplore: 'Create categories in "Explore" section',
     expenseCategories: 'Expense Categories',
     
-    // Category management screen
+    
     categoryManagement: 'Category Management',
     clickToEdit: 'Click on category to edit',
     clickToEditAndDelete: 'Click on category to edit, "Delete" button to remove',
@@ -97,7 +97,7 @@ export const Translations = {
     noCategories: 'No categories',
     resetData: 'Reset Data',
     
-    // Category modals
+   
     addCategoryTitle: 'Add Category',
     editCategoryTitle: 'Edit Category',
     categoryName: 'Name:',
@@ -106,7 +106,7 @@ export const Translations = {
     amountPlaceholder: 'Amount (optional)',
     color: 'Color:',
     
-    // Expense modals
+    
     addExpense: 'Add Expense',
     selectCategory: 'Select Category',
     expenseAmount: 'Amount:',
@@ -114,7 +114,7 @@ export const Translations = {
     description: 'Description (optional):',
     descriptionPlaceholder: 'Brief expense description',
     
-    // Notifications
+   
     categoryExists: 'Category already exists',
     categoryExistsMessage: 'Category "{name}" already exists. Please choose a different name.',
     limitReached: 'Limit reached',
@@ -134,11 +134,11 @@ export const Translations = {
     resetDataTitle: 'Reset Data',
     resetDataMessage: 'Are you sure you want to reset all data to default values? This action cannot be undone.',
     
-    // Navigation
+    
     home: 'Home',
     explore: 'Explore',
     
-    // Language settings
+    
     language: 'Language',
     russian: 'Русский',
     english: 'English',

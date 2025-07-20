@@ -29,7 +29,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
   const { t, tWithParams } = useLanguage();
   const [updateKey, setUpdateKey] = useState(0);
   
-  // Подписываемся на изменения языка
+ 
   useEffect(() => {
     const unsubscribe = subscribeToLanguageChange(() => {
       setUpdateKey(prev => prev + 1);
@@ -42,21 +42,21 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
   const [amount, setAmount] = useState('');
   const [color, setColor] = useState(COLOR_PALETTE[0]);
   
-  // Состояние для редактирования
+  
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [editName, setEditName] = useState('');
   const [editAmount, setEditAmount] = useState('');
   const [editColor, setEditColor] = useState(COLOR_PALETTE[0]);
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   
-  // Состояние для добавления новой категории
+  
   const [isAddModalVisible, setIsAddModalVisible] = useState(false);
 
   const addCategory = () => {
     if (!name.trim()) return;
     if (value.length >= 20) return;
     
-    // Проверяем, не существует ли уже категория с таким именем
+    
     const existingCategory = value.find(cat => cat.name.toLowerCase().trim() === name.toLowerCase().trim());
     if (existingCategory) {
       Alert.alert(
@@ -67,21 +67,21 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
       return;
     }
     
-    // Если сумма не указана или некорректная, устанавливаем 0
+    
     const categoryAmount = amount.trim() && !isNaN(Number(amount)) && Number(amount) >= 0 
       ? Number(amount) 
       : 0;
     
     onChange([...value, { name: name.trim(), amount: categoryAmount, color }]);
     
-    // Показываем уведомление об успешном добавлении
+    
     Alert.alert(
       t('categoryAdded'),
       tWithParams('categoryAddedMessage', { name: name.trim() }),
       [{ text: 'OK' }]
     );
     
-    // Сброс формы
+   
     setName('');
     setAmount('');
     setColor(COLOR_PALETTE[0]);
@@ -145,7 +145,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
   const saveEdit = () => {
     if (!editName.trim() || editingIndex === null) return;
     
-    // Проверяем, не существует ли уже категория с таким именем (кроме текущей)
+   
     const existingCategory = value.find((cat, i) => 
       i !== editingIndex && cat.name.toLowerCase().trim() === editName.toLowerCase().trim()
     );
@@ -158,7 +158,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
       return;
     }
     
-    // Если сумма не указана или некорректная, устанавливаем 0
+    
     const categoryAmount = editAmount.trim() && !isNaN(Number(editAmount)) && Number(editAmount) >= 0 
       ? Number(editAmount) 
       : 0;
@@ -171,7 +171,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
     };
     onChange(updated);
     
-    // Сброс формы
+    
     setEditName('');
     setEditAmount('');
     setEditColor(COLOR_PALETTE[0]);
@@ -323,7 +323,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
         </Text>
       </TouchableOpacity>
 
-        {/* Модальное окно для добавления категории */}
+        
         <Modal
           visible={isAddModalVisible}
           transparent={true}
@@ -484,7 +484,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ value, onChang
           </TouchableWithoutFeedback>
         </Modal>
 
-        {/* Модальное окно для редактирования */}
+      
         <Modal
           visible={isEditModalVisible}
           transparent={true}

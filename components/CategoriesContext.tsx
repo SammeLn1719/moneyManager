@@ -24,12 +24,12 @@ export const CategoriesProvider = ({ children }: { children: ReactNode }) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Загрузка данных при запуске приложения
+  
   useEffect(() => {
     loadCategories();
   }, []);
 
-  // Сохранение данных при изменении категорий
+  
   useEffect(() => {
     if (!isLoading) {
       saveCategories(categories);
@@ -43,14 +43,14 @@ export const CategoriesProvider = ({ children }: { children: ReactNode }) => {
         const parsedCategories = JSON.parse(savedCategories);
         setCategories(parsedCategories);
       } else {
-        // Если данных нет, используем категории по умолчанию
+        
         setCategories(defaultCategories);
-        // Сохраняем категории по умолчанию
+    
         await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(defaultCategories));
       }
     } catch (error) {
       console.error('Ошибка при загрузке категорий:', error);
-      // В случае ошибки используем категории по умолчанию
+      
       setCategories(defaultCategories);
     } finally {
       setIsLoading(false);

@@ -18,7 +18,7 @@ export default function HomeScreen() {
   const { t } = useLanguage();
   const [updateKey, setUpdateKey] = useState(0);
 
-  // Подписываемся на изменения языка
+  
   useEffect(() => {
     const unsubscribe = subscribeToLanguageChange(() => {
       setUpdateKey(prev => prev + 1);
@@ -58,7 +58,7 @@ export default function HomeScreen() {
             alignItems: 'center',
             paddingHorizontal: screenWidth > 400 ? 24 : 16,
             paddingTop: screenHeight > 800 ? 20 : 16,
-            paddingBottom: 100, // Отступ для табов
+            paddingBottom: 100, 
           }}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
